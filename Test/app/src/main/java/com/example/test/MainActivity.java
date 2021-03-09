@@ -15,6 +15,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         tv.findViewById(R.id.tv_1);
-        String a = "123";
+        String a = "aaa";
     }
 }
