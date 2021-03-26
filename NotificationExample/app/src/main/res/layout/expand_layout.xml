@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/songNameExpand"
+        android:layout_width="250dp"
+        android:layout_height="25dp"
+        android:text="Bước Qua mùa cô đơn"
+        android:textSize="20sp"
+        android:textColor="@color/black">
+    </TextView>
+
+    <TextView
+        android:id="@+id/songSinggerExpand"
+        android:layout_width="200dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="5dp"
+        android:textSize="20sp"
+        android:layout_below="@+id/songNameExpand"
+        android:text="Vũ">
+    </TextView>
+
+    <ImageView
+        android:id="@+id/songPreExpand"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="5dp"
+        android:src="@drawable/baseline_skip_previous_black_36dp"
+        android:layout_below="@+id/songSinggerExpand">
+    </ImageView>
+
+    <ImageView
+        android:id="@+id/songPauExpand"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="20dp"
+        android:src="@drawable/baseline_pause_black_36dp"
+        android:layout_toRightOf="@+id/songPreExpand"
+        android:layout_below="@+id/songSinggerExpand">
+    </ImageView>
+
+    <ImageView
+        android:id="@+id/songNextExpand"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="20dp"
+        android:src="@drawable/baseline_skip_next_black_36dp"
+        android:layout_toRightOf="@+id/songPauExpand"
+        android:layout_below="@+id/songSinggerExpand">
+    </ImageView>
+
+    <ImageView
+        android:id="@+id/songImgExpand"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:src="@drawable/vu"
+        android:layout_alignParentRight="true">
+    </ImageView>
+
+</RelativeLayout>

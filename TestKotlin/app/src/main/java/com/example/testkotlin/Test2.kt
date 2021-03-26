@@ -6,41 +6,35 @@ import kotlin.reflect.KProperty
 
 // region generic
 
+open class Father()
 
-//class Person<out T>(val value: T) {
-//    fun get(): T {
-//        return value
+class Son() : Father()
+
+class Person<out T>(val value: T) {
+    fun get(): T {
+        return value
+    }
+}
+
+//class Person<in T>() {
+//    fun say(value : T){
+//        println("${value.hashCode()}")
 //    }
 //}
-
-class Person<in T>() {
-    fun say(value : T){
-        println("${value.hashCode()}")
-    }
-}
-
-open class Father(){
-    open fun talk() : String{
-        return "i am father class"
-    }
-}
-
-class Son() : Father() {
-    override fun talk(): String {
-        return "i am son class"
-    }
-}
 
 // endregion
 
 fun main() {
-    val fatherObject: Person<Father> = Person()
-    val sonObject : Person<Son> = fatherObject
+
+    val sonObject: Person<Son> = Person(Son())
+    val fatherObject: Person<Father>
+    fatherObject = sonObject
+
+//        val fatherObject: Person<Father> = Person()
+//        val sonObject: Person<Son>
+//        sonObject = fatherObject
 }
 
 
-//    var son = Son()
-//    var sonObject: Person<Son> = Person(son)
-//    var fatherObject: Person<Father> = sonObject
-//
-//    println(fatherObject.get().talk())      // i am son class
+
+

@@ -1,45 +1,20 @@
 package com.example.testkotlin
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 
-class UserAdapter( private var listUser : ArrayList<User> ) : RecyclerView.Adapter<UserAdapter.UserViewHolder>() {
-
-    // Khai báo Interface giúp cho việc click vào phần tử của recycleview
-    interface IClickItemUserListener {
-        fun onClickItemUser(user: User?)
-    }
+class UserAdapter( private var listUser : ArrayList<User>,
+                   private var clicklistner : (User) -> Unit) : RecyclerView.Adapter<UserAdapter.UserViewHolder>() {
 
     public fun setData(newList : ArrayList<User>) {
         listUser = newList
         notifyDataSetChanged()
-    }
-
-    public inner class UserViewHolder(itemView: View) :
-        RecyclerView.ViewHolder(itemView),View.OnClickListener
-    {
-        var imgUserAvatar: ImageView
-        var tvUserName: TextView
-        var tvUserAge: TextView
-        lateinit var iClickItemUserListener : IClickItemUserListener
-
-        init {
-            imgUserAvatar = itemView.findViewById(R.id.imgUserAvatar)
-            tvUserName = itemView.findViewById(R.id.tvUserName)
-            tvUserAge = itemView.findViewById(R.id.tvUserAge)
-        }
-
-        public fun setItemClickListener( iClickItemUserListener: IClickItemUserListener ){
-            this.iClickItemUserListener = iClickItemUserListener
-        }
-
-        override fun onClick(v: View?) {
-            this.iClickItemUserListener.onClickItemUser(listUser.get(adapterPosition))
-        }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserViewHolder {
@@ -52,10 +27,30 @@ class UserAdapter( private var listUser : ArrayList<User> ) : RecyclerView.Adapt
         holder.imgUserAvatar.setImageResource(user.imgReouser)
         holder.tvUserName.setText(user.name)
         holder.tvUserAge.setText(user.age.toString())
-
-        var i : IClickItemUserListener
-//        holder.setItemClickListener( )
     }
+
+    inner class UserViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView),View.OnClickListener
+    {
+        var imgUserAvatar: ImageView = itemView.findViewById(R.id.imgUserAvatar)
+        var tvUserName: TextView = itemView.findViewById(R.id.tvUserName)
+        var tvUserAge: TextView= itemView.findViewById(R.id.tvUserAge)
+
+        init {
+            itemView.setOnClickListener(this)
+        }
+
+        override fun onClick(v: View?) {
+            if (adapterPosition != RecyclerView.NO_POSITION){
+                val user = listUser.get(adapterPosition)
+                clicklistner(user)
+//                clicklistner.onUserClick(user)
+            }
+        }
+    }
+
+//    interface IClickUserListener{
+//        fun onUserClick(user: User)
+//    }
 
     override fun getItemCount(): Int {
         if (listUser != null){

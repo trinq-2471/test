@@ -1,20 +1,34 @@
 package com.example.testkotlin
 
-
-class ArrayUtil<T> ( val mArray: Array<T> ){
-    fun findIndexOfElement( element: T ){
-        for ( index in mArray.indices ) {
-            if ( mArray[index] == element ){
-                println("Index of element ${element} is ${index}")
-            }
-        }
+class Student<T>(val data: T){
+    fun showData(){
+        println(data)
     }
 }
 
-fun main(){
-    val arrayString = ArrayUtil(arrayOf("Android","Kotlin","PHP","C#"))
-    val arrayInt = ArrayUtil(arrayOf(1,2,3,4,5))
+//class Student<T>( val data : T){
+//    fun showData(){
+//        when{
+//            data is String -> println("type of data is String")
+//            data is Int -> println("type of data is Int")
+//            data is Boolean -> println("type of data is Boolean")
+//            else -> println("type of data is not String,Int,Boolean ")
+//        }
+//    }
+//}
 
-    arrayString.findIndexOfElement("Kotlin")    // Index of element Kotlin is 1
-    arrayInt.findIndexOfElement(3)              // Index of element 3 is 2
+fun main(){
+
+    val studentA = Student("tri")
+    val studentB = Student(12)
+    studentA.showData()
+    studentB.showData()
+
+
+//    val studentA = Student("tri")
+//    val studentB = Student(18)
+//    val studentC = Student(12.3)
+//    studentA.showData()     // type of data is String
+//    studentB.showData()     // type of data is Int
+//    studentC.showData()     // type of data is not String,Int,Boolean
 }

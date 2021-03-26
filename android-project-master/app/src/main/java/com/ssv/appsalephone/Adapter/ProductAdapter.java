@@ -60,6 +60,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
                     home.toDetailProductFragment(product);
                 }
             });
+
         }
     }
 
@@ -75,7 +76,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
             imgPhotoProduct = itemView.findViewById(R.id.img_photo_product);
             tvProductName = itemView.findViewById(R.id.tv_product_name);
             tvProductPrice = itemView.findViewById(R.id.tv_product_price);
-            itemView.setOnClickListener(this);
+//            itemView.setOnClickListener(this);
         }
 
         public void setItemClickListener(IClickItemProductListener itemClickListener){

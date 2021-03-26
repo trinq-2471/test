@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/songNameCustom"
+        android:layout_width="100dp"
+        android:layout_height="20dp"
+        android:text="Bước Qua mùa cô đơn"
+        android:textColor="@color/black">
+    </TextView>
+
+    <TextView
+        android:id="@+id/songSinggerCustom"
+        android:layout_width="100dp"
+        android:layout_height="20dp"
+        android:layout_below="@+id/songNameCustom"
+        android:text="Vũ">
+    </TextView>
+
+    <ImageView
+        android:id="@+id/songPreCustom"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="30dp"
+        android:src="@drawable/baseline_skip_previous_black_36dp"
+        android:layout_toRightOf="@+id/songSinggerCustom">
+    </ImageView>
+
+    <ImageView
+        android:id="@+id/songPausCustom"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="10dp"
+        android:src="@drawable/baseline_pause_black_36dp"
+        android:layout_toRightOf="@+id/songPreCustom">
+    </ImageView>
+
+    <ImageView
+        android:id="@+id/songNextCustom"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="10dp"
+        android:src="@drawable/baseline_skip_next_black_36dp"
+        android:layout_toRightOf="@+id/songPausCustom">
+    </ImageView>
+
+    <ImageView
+        android:id="@+id/songImgCustom"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/vu"
+        android:layout_alignParentRight="true">
+    </ImageView>
+
+</RelativeLayout>

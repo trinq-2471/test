@@ -7,10 +7,9 @@ import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 
-
-// Sets a text to TextView or hides the TextView if the text is null or empty
+// Sets a text to TextView or hides the TextView if the text is empty or blank
 fun TextView.setTextOrHide(string: String){
-    return if (string.isNullOrEmpty() || string.isNullOrBlank()) {
+    if (string.isEmpty() || string.isBlank() ) {
         this.visibility = View.GONE
     } else {
         this.visibility = View.VISIBLE
@@ -21,7 +20,7 @@ fun TextView.setTextOrHide(string: String){
 // Show toast message in center screen when click button
 fun Button.setToastMessage(context: Context, message : String ){
     this.setOnClickListener{
-        var toast = Toast.makeText(context,message, Toast.LENGTH_LONG);
+        val toast = Toast.makeText(context,message, Toast.LENGTH_LONG);
         toast.setGravity(Gravity.CENTER, 0, 0);
         toast.show()
     }
