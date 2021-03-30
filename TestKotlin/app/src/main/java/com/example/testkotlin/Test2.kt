@@ -30,6 +30,7 @@ fun main() {
     val fatherObject: Person<Father>
     fatherObject = sonObject
 
+
 //        val fatherObject: Person<Father> = Person()
 //        val sonObject: Person<Son>
 //        sonObject = fatherObject
