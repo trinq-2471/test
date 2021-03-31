@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="4dp"
+        android:layout_margin="8dp"
+        app:cardCornerRadius="4dp"
+        app:cardBackgroundColor="#FFFFFF">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/imgBattle"
+                android:layout_width="100dp"
+                android:layout_height="70dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/thrones"/>
+
+            <TextView
+                android:id="@+id/tvCountWar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/imgBattle"
+                android:textSize="15sp"
+                android:textColor="@color/black"
+                android:text="Battle 1"/>
+
+            <TextView
+                android:id="@+id/tvBattleName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:text="Name Battle"
+                android:textColor="@color/black"
+                android:layout_below="@+id/tvCountWar"
+                android:layout_toRightOf="@+id/imgBattle"/>
+
+            <TextView
+                android:id="@+id/tvBattleLocation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:text="Location Battle"
+                android:textColor="@color/black"
+                android:layout_below="@+id/tvBattleName"
+                android:layout_toRightOf="@+id/imgBattle"/>
+
+            <View
+                android:id="@+id/divider"
+                android:layout_width="match_parent"
+                android:layout_height="0.1dp"
+                android:layout_marginTop="2dp"
+                android:background="@color/black"
+                android:layout_below="@+id/imgBattle"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_below="@+id/divider"
+                android:weightSum="2">
+
+                <TextView
+                    android:id="@+id/tvBattleAttackerKing"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textSize="10sp"
+                    android:textColor="@color/black"
+                    android:text="Attacker King"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="VS"
+                    android:textColor="@color/black"/>
+
+                <TextView
+                    android:id="@+id/tvBattleDefenderKing"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:textSize="10sp"
+                    android:textColor="@color/black"
+                    android:text="DefenderKing" />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+
+</LinearLayout>
