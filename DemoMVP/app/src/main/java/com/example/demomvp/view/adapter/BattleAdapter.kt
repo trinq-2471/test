@@ -1,4 +1,4 @@
-package com.example.demomvp
+package com.example.demomvp.view.adapter
 
 import android.view.LayoutInflater
 import android.view.View
@@ -6,11 +6,11 @@ import android.view.ViewGroup
 import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.demomvp.R
+import com.example.demomvp.model.Battle
 
 class BattleAdapter(private var listBattle: MutableList<Battle?>)
     : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
-
-    constructor()
 
     private val VIEW_TYPE_ITEM = 0
     private val VIEW_TYPE_LOADING = 1
@@ -31,16 +31,12 @@ class BattleAdapter(private var listBattle: MutableList<Battle?>)
     }
 
     override fun getItemCount(): Int {
-        return if (listBattle == null) 0 else listBattle.size
+        return listBattle.size
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-
-        //setting data on each row of list according to position.
         if (holder is BattleViewHolder) {
             populateItemRows(holder, position)
-        } else if (holder is LoadingViewHolder) {
-            showLoadingView(holder, position)
         }
     }
 
@@ -60,10 +56,6 @@ class BattleAdapter(private var listBattle: MutableList<Battle?>)
 
     inner class LoadingViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var progressBar: ProgressBar = itemView.findViewById(R.id.progressBar)
-    }
-
-    private fun showLoadingView(viewHolder: LoadingViewHolder, position: Int) {
-        //ProgressBar would be displayed
     }
 
     private fun populateItemRows(viewHolder: BattleViewHolder, position: Int) {
