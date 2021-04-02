@@ -29,12 +29,16 @@ class MyApplication : Application() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
 
             // Create the NotificationChannelGame
+//            val soundIphoneUriGame : Uri = Uri.parse("android.resource://" + packageName + "/" + R.raw.iphonesound)
+//            val attributesGame : AudioAttributes = AudioAttributes.Builder().setUsage(AudioAttributes.USAGE_NOTIFICATION).build()
+
             val uri : Uri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION)
             val nameChanelGame = getString(R.string.channel_game_name)
             val descriptionTextChanelGame = getString(R.string.channel_game_description)
             val importanceChanelGame = NotificationManager.IMPORTANCE_DEFAULT
             val mChannelGame = NotificationChannel(MyApplication.CHANNEL_ID_GAME(), nameChanelGame, importanceChanelGame)
             mChannelGame.description = descriptionTextChanelGame
+//            mChannelGame.setSound(soundIphoneUriGame,attributesGame)
 
 
             // Create the NotificationChannelJob

@@ -57,11 +57,11 @@ class MainActivity : AppCompatActivity() {
                 .setSmallIcon(R.drawable.ic_baseline_videogame_asset_24)
                 .setLargeIcon(bitmap)
 //                .setStyle(NotificationCompat.BigTextStyle().bigText(CONTENT_NOTIFICATION_CHANEL_GAME))
-                .setStyle(NotificationCompat.BigPictureStyle().bigPicture(bitmap).bigLargeIcon(null))
+//                .setStyle(NotificationCompat.BigPictureStyle().bigPicture(bitmap).bigLargeIcon(null))
                 .setColor(resources.getColor(R.color.red))
                 .setAutoCancel(true)
                 .setContentIntent(contendIntent)
-//                .setSound(uri)
+                .setSound(uri)
                 .build()
 
         val notificationManagerCompat = NotificationManagerCompat.from(this)
